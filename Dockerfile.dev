@@ -1,0 +1,16 @@
+FROM golang:1.18.0-alpine
+
+RUN apk update && \
+    apk --no-cache add git
+
+WORKDIR /app
+
+COPY . .
+
+RUN go mod tidy && \
+    go install github.com/cosmtrek/air@v1.27.3
+
+ENV PORTS=7777
+EXPOSE 7777
+
+CMD ["air", "-c", ".air.conf"]
