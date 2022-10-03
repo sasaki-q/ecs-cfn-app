@@ -5,7 +5,9 @@ RUN apk update && \
 
 WORKDIR /app
 COPY . .
-RUN go build -o main main.go
+
+RUN go mod tidy && \
+    go build -o main main.go
 
 FROM alpine:3.16
 WORKDIR /app
