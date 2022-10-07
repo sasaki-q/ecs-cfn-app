@@ -13,4 +13,5 @@ RUN go mod tidy && \
 ENV PORTS=7777
 EXPOSE 7777
 
+
 CMD ["air", "-c", ".air.conf"]
