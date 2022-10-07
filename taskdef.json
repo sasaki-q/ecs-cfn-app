@@ -24,7 +24,7 @@
             "environment": [
                 {
                     "name": "FROM_TASK",
-                    "value": "json"
+                    "value": "env from task definition"
                 }
             ],
             "name": "container",
