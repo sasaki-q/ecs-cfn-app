@@ -1,5 +1,5 @@
 {
-    "executionRoleArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+    "executionRoleArn": "arn:aws:iam::189484286514:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
             "dnsSearchDomains": null,
@@ -33,7 +33,7 @@
     ],
     "placementConstraints": [],
     "memory": "512",
-    "taskRoleArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+    "taskRoleArn": "arn:aws:iam::189484286514:role/ecsTaskExecutionRole",
     "compatibilities": [
         "FARGATE"
     ],
