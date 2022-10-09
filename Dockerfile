@@ -12,8 +12,6 @@ RUN go mod tidy && \
 FROM alpine:3.16
 WORKDIR /app
 COPY --from=builder /app/main .
-COPY --from=builder /app/appspec.yml .
-COPY --from=builder /app/taskdef.json .
 
 ENV PORTS=8080
 EXPOSE 8080
