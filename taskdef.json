@@ -27,7 +27,7 @@
                     "value": "env from task definition"
                 }
             ],
-            "name": "container",
+            "name": "cfn-test-container",
             "image": "<IMAGE1_NAME>"
         }
     ],
@@ -37,7 +37,7 @@
     "compatibilities": [
         "FARGATE"
     ],
-    "family": "mytest",
+    "family": "cfn-test-task",
     "networkMode": "awsvpc",
     "runtimePlatform": {
         "operatingSystemFamily": "LINUX",
