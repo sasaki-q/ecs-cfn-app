@@ -8,17 +8,16 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - IMAGE_TAG=$(date "+%Y-%m-%d_%H-%M")
   build:
     commands:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_NAME .
-      - docker tag $REPOSITORY_NAME $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag $REPOSITORY_NAME $REPOSITORY_URI:latest
   post_build:
     commands:
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG  > imageDetail.json
+      - docker push $REPOSITORY_URI:latest
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:latest > imageDetail.json
       - cat imageDetail.json
 artifacts:
   files: imageDetail.json

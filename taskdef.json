@@ -6,9 +6,8 @@
             "environmentFiles": null,
             "logConfiguration": {
                 "logDriver": "awslogs",
-                "secretOptions": null,
                 "options": {
-                    "awslogs-group": "/ecs/mytest",
+                    "awslogs-group": "/ecs/cfn-test-log-group",
                     "awslogs-region": "ap-northeast-1",
                     "awslogs-stream-prefix": "ecs"
                 }
